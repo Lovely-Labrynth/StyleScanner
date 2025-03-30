@@ -1,4 +1,44 @@
 /*
+	Name: Interest Earned
+	Copyright: 2025
+	Author: Yuhang Lin
+	Date: 30/03/25
+	Description: computer the compound interest
+*/
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+// Main test driver
+int main(int argc, char** argv)
+ {
+	float principal, rate, interest, amount;
+	int timesCompounded;
+ 	
+	cout << "Enter Principal amount: ";
+    cin >> principal;
+
+    cout << "Enter Interest Rate (in percentage): ";
+    cin >> rate;
+
+    cout << "Enter Number of times interest is compounded per year: ";
+    cin >> timesCompounded;
+    
+    rate = rate/100;
+    amount = principal * pow((1 + rate / timesCompounded), timesCompounded);
+	interest = amount - principal;
+	
+	cout << "\n------------------------------"<< endl;
+	cout << setw(26) << left << "Interest Rate: "  << setw(10) << right << fixed << setprecision(2) << rate* 100 << " %" << endl;
+	cout << setw(26) << left <<"Times compounded : " << setw(10)<< right <<timesCompounded <<endl; 
+	cout << setw(25) << left << "Principal: " <<"$"<< setw(10)<< right<<fixed<< setprecision(2) <<principal <<endl;
+	cout << setw(25) << left <<"Interest : " <<"$"<< setw(10)<< right<< fixed << setprecision(2) << interest <<endl;  
+	cout << setw(25)<< left <<"Amount in Savings: " <<"$"<<setw(10)<< right<< fixed << setprecision(2) << amount <<endl; 
+	
+	return 0;
+}
+/*
 	Name: StyleScanner
 	Copyright: 2021-2024
 	Author: Daniel R. Collins
